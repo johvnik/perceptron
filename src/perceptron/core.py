@@ -39,38 +39,47 @@ class Layer:
 
     def _activation_function(self):
         if self.activation == "relu":
-            return lambda z: np.maximum(0, z)
+            return self._relu
 
         elif self.activation == "sigmoid":
-            return lambda z: self._sigmoid(z)
+            return self._sigmoid
 
         else:
             """
-            self.activation is None, therefor default to linear
+            If self.activation is None default to linear
             """
             return lambda z: z
 
     def _activation_derivative(self):
         if self.activation == "relu":
-            pass
-            # return lambda z: np.maximum(0, z)
+            return self._relu_derivative
 
         elif self.activation == "sigmoid":
-            pass
-            # return lambda z: self._sigmoid(z)
+            return self._sigmoid_derivative
 
         else:
             """
-            self.activation is None, therefor default to linear
+            If self.activation is None, default to linear
             """
-            pass
-            # return lambda z: z
+            return lambda z: z
 
     def _sigmoid(self, z):
         """
         Sigmoid activation function.
         """
         return 1 / (1 + np.exp(-z))
+
+    def _sigmoid_derivative(self, z):
+        """
+        Sigmoid activation function.
+        """
+        pass
+
+    def _relu(self, z):
+        """
+        Relu activation function.
+        """
+        return np.maximum(0, z)
 
 
 class MultiLayerPerceptron:
