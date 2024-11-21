@@ -1,7 +1,7 @@
 [project]
 name = "perceptron"
 version = "0.1.0"
-description = "Add your description here"
+description = "A simple perceptron implemented from scratch."
 readme = "README.md"
 authors = [
     { name = "johvnik", email = "vaught.john@gmail.com" }

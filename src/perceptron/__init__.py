@@ -1,3 +1,3 @@
-from .core import Layer, MultiLayerPerceptron
+from .core import Tensor
 
-__all__ = ["Layer", "MultiLayerPerceptron"]
+__all__ = ["Tensor"]
